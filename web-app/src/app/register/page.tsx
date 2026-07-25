@@ -33,7 +33,6 @@ export default function RegisterPage() {
       <div className="flex min-h-screen items-center justify-center px-4 pt-16">
         <div className="w-full max-w-md animate-fade-in">
           <div className="glass-card p-8">
-            {/* Header */}
             <div className="mb-8 text-center">
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-maroon to-maroon-light">
                 <svg className="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -46,14 +45,12 @@ export default function RegisterPage() {
               </p>
             </div>
 
-            {/* Error message */}
             {error && (
               <div className="mb-6 rounded-lg border border-danger/30 bg-danger/10 p-4 text-sm text-danger animate-fade-in">
                 {error}
               </div>
             )}
 
-            {/* Form */}
             <form action={handleSubmit} className="space-y-5">
               <div>
                 <label htmlFor="name" className="mb-2 block text-sm font-medium text-text-secondary">
@@ -117,7 +114,6 @@ export default function RegisterPage() {
               </button>
             </form>
 
-            {/* Footer */}
             <p className="mt-6 text-center text-sm text-text-secondary">
               Already have an account?{" "}
               <Link href="/login" className="font-medium text-maroon-light hover:text-maroon-glow transition-colors">

@@ -19,7 +19,6 @@ export default async function DashboardPage() {
       <Navbar user={session.user} />
 
       <main className="mx-auto max-w-7xl px-4 pt-24 pb-16 sm:px-6 lg:px-8">
-        {/* Welcome Banner */}
         <div className="mb-8 animate-fade-in">
           <h1 className="text-3xl font-bold text-text-primary sm:text-4xl">
             Welcome back,{" "}
@@ -32,9 +31,7 @@ export default async function DashboardPage() {
           </p>
         </div>
 
-        {/* Stats Cards */}
         <div className="mb-10 grid gap-6 sm:grid-cols-3 animate-slide-up">
-          {/* Total Predictions */}
           <div className="glass-card p-6">
             <div className="mb-3 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-maroon/10">
@@ -47,7 +44,6 @@ export default async function DashboardPage() {
             <div className="text-3xl font-extrabold text-text-primary">{stats.total}</div>
           </div>
 
-          {/* Failures Detected */}
           <div className="glass-card p-6">
             <div className="mb-3 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-danger/10">
@@ -60,7 +56,6 @@ export default async function DashboardPage() {
             <div className="text-3xl font-extrabold text-danger">{stats.failures}</div>
           </div>
 
-          {/* Success Rate */}
           <div className="glass-card p-6">
             <div className="mb-3 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-success/10">
@@ -74,7 +69,6 @@ export default async function DashboardPage() {
           </div>
         </div>
 
-        {/* Actions Row */}
         <div className="mb-10 flex flex-col gap-4 sm:flex-row">
           <Link href="/predict" className="btn-maroon inline-flex items-center justify-center gap-2">
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +84,6 @@ export default async function DashboardPage() {
           </Link>
         </div>
 
-        {/* Recent Predictions */}
         <div className="glass-card overflow-hidden animate-slide-up" style={{ animationDelay: "200ms" }}>
           <div className="border-b border-border px-6 py-4">
             <h2 className="text-lg font-bold text-text-primary">Recent Predictions</h2>

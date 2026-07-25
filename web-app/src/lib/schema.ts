@@ -1,7 +1,7 @@
 import mongoose, { Document, Model } from "mongoose";
 
 export interface User {
-  id: string; // Map _id to id if needed, or use as is
+  id: string;
   name: string;
   email: string;
   passwordHash: string;
@@ -30,7 +30,6 @@ const UserSchema = new mongoose.Schema<User>({
   createdAt: { type: Date, default: Date.now },
 });
 
-// Virtual for 'id' to map _id to id string easily
 UserSchema.virtual('id').get(function() {
   return this._id.toHexString();
 });

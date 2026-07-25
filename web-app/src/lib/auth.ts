@@ -35,7 +35,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         }
 
         return {
-          id: user.id, // the virtual id we set up
+          id: user.id,
           name: user.name,
           email: user.email,
         };

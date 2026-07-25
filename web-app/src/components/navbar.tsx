@@ -23,7 +23,6 @@ export default function Navbar({ user }: NavbarProps) {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[#1a1a1a] bg-[#0a0a0a]/90 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
         <Link href={user ? "/dashboard" : "/"} className="flex items-center gap-3 group">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-maroon to-maroon-light transition-shadow group-hover:shadow-[0_0_20px_rgba(128,0,32,0.4)]">
             <svg
@@ -34,9 +33,7 @@ export default function Navbar({ user }: NavbarProps) {
               strokeWidth="2"
               className="h-5 w-5 text-white"
             >
-              {/* Cog / Gear */}
               <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-              {/* Exclamation point */}
               <path d="M12 9v4M12 15h.01" strokeLinecap="round" strokeWidth="2.5" />
             </svg>
           </div>
@@ -46,7 +43,6 @@ export default function Navbar({ user }: NavbarProps) {
           </span>
         </Link>
 
-        {/* Desktop links */}
         <div className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
             <Link
@@ -62,7 +58,6 @@ export default function Navbar({ user }: NavbarProps) {
           ))}
         </div>
 
-        {/* Right side */}
         <div className="hidden items-center gap-3 md:flex">
           {user ? (
             <div className="flex items-center gap-3">
@@ -93,7 +88,6 @@ export default function Navbar({ user }: NavbarProps) {
           )}
         </div>
 
-        {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="rounded-lg p-2 text-text-secondary hover:text-text-primary md:hidden"
@@ -108,7 +102,6 @@ export default function Navbar({ user }: NavbarProps) {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="border-t border-[#1a1a1a] bg-[#0a0a0a] px-4 pb-4 md:hidden animate-fade-in">
           {navLinks.map((link) => (

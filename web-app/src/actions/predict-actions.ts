@@ -21,7 +21,6 @@ export async function makePrediction(formData: FormData): Promise<{
   const toolWear = parseFloat(formData.get("toolWear") as string);
   const modelType = (formData.get("modelType") as ModelType) || "both";
 
-  // Validate
   if (
     isNaN(airTemp) ||
     isNaN(processTemp) ||
@@ -32,7 +31,6 @@ export async function makePrediction(formData: FormData): Promise<{
     return { error: "All fields must be valid numbers." };
   }
 
-  // Run prediction
   const result = predict(
     { airTemp, processTemp, rotationalSpeed, torque, toolWear },
     modelType
@@ -40,7 +38,6 @@ export async function makePrediction(formData: FormData): Promise<{
 
   await dbConnect();
 
-  // Save to database
   try {
     await PredictionModel.create({
       userId: session.user.id,
@@ -69,13 +66,11 @@ export async function getPredictionHistory() {
 
   await dbConnect();
 
-  // Use .lean() to return plain JavaScript objects that can be passed to Client Components
   const rows = await PredictionModel
     .find({ userId: session.user.id })
     .sort({ createdAt: -1 })
     .lean();
 
-  // Convert MongoDB _id to string for client-side serialization if necessary
   const serializedRows = rows.map((row: any) => ({
     ...row,
     id: row._id.toString(),

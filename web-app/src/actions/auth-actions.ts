@@ -15,7 +15,6 @@ export async function registerUser(formData: FormData) {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
 
-  // Validation
   if (!name || !email || !password) {
     return { error: "All fields are required." };
   }
@@ -34,14 +33,12 @@ export async function registerUser(formData: FormData) {
 
   await dbConnect();
 
-  // Check if user already exists
   const existing = await UserModel.findOne({ email: email.toLowerCase().trim() });
 
   if (existing) {
     return { error: "An account with this email already exists." };
   }
 
-  // Hash password and create user
   const passwordHash = await bcrypt.hash(password, 12);
 
   try {
@@ -51,7 +48,6 @@ export async function registerUser(formData: FormData) {
       passwordHash,
     });
 
-    // Auto-sign in after registration
     await signIn("credentials", {
       email: email.toLowerCase().trim(),
       password,

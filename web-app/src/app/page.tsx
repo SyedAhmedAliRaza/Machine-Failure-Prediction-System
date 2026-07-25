@@ -6,16 +6,13 @@ export default function LandingPage() {
     <div className="min-h-screen bg-background">
       <Navbar user={null} />
 
-      {/* Hero Section */}
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-16">
-        {/* Animated background glow */}
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-maroon/5 blur-[120px]" />
           <div className="absolute right-1/4 bottom-1/4 h-[300px] w-[300px] rounded-full bg-maroon/3 blur-[100px]" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-4xl text-center animate-fade-in -mt-12 sm:-mt-20">
-          {/* Badge */}
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-maroon/30 bg-maroon/5 px-4 py-2">
             <div className="h-1 w-1 rounded-full bg-success animate-pulse-glow" />
             <span className="text-sm font-medium text-maroon-light">
@@ -59,7 +56,6 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <svg className="h-8 w- text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -67,7 +63,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold text-text-primary sm:text-4xl">
@@ -142,7 +137,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
       <section className="border-t border-border bg-surface/30 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
@@ -163,7 +157,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-24">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="mb-6 text-3xl font-bold text-text-primary sm:text-4xl">
@@ -181,7 +174,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="border-t border-border py-8">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <p className="text-sm text-text-muted">

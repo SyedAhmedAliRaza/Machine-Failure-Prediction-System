@@ -58,7 +58,6 @@ export default function PredictPage() {
   const [error, setError] = useState("");
   const [modelType, setModelType] = useState<string>("both");
   
-  // Fetch user object to display real name on navbar
   const [navUser, setNavUser] = useState<NavUser | null>(null);
 
   useEffect(() => {
@@ -98,7 +97,6 @@ export default function PredictPage() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-5">
-          {/* Form */}
           <div className="lg:col-span-3">
             <form action={handleSubmit} className="glass-card p-6 animate-slide-up">
               <div className="mb-6 border-b border-border pb-4">
@@ -139,7 +137,6 @@ export default function PredictPage() {
                 })}
               </div>
 
-              {/* Model selector */}
               <div className="mt-6 border-t border-border pt-5">
                 <label className="mb-3 block text-sm font-medium text-text-secondary">
                   Model Selection
@@ -166,7 +163,6 @@ export default function PredictPage() {
                 </div>
               </div>
 
-              {/* Error */}
               {error && (
                 <div className="mt-5 rounded-lg border border-danger/30 bg-danger/10 p-4 text-sm text-danger">
                   {error}
@@ -193,11 +189,9 @@ export default function PredictPage() {
             </form>
           </div>
 
-          {/* Result Panel */}
           <div className="lg:col-span-2">
             {result ? (
               <div className="animate-slide-up space-y-4">
-                {/* Primary Result */}
                 <div className={`glass-card overflow-hidden ${result.bestPrediction ? "animate-pulse-glow" : ""}`}>
                   <div className={`px-6 py-3 ${result.bestPrediction ? "bg-danger/10" : "bg-success/10"}`}>
                     <span className={`text-sm font-bold ${result.bestPrediction ? "text-danger" : "text-success"}`}>
@@ -205,7 +199,6 @@ export default function PredictPage() {
                     </span>
                   </div>
                   <div className="p-6">
-                    {/* Probability Gauge */}
                     <div className="mb-6 text-center">
                       <div className="relative mx-auto h-32 w-32">
                         <svg className="h-full w-full -rotate-90" viewBox="0 0 100 100">
@@ -249,7 +242,6 @@ export default function PredictPage() {
                   </div>
                 </div>
 
-                {/* Individual Model Results */}
                 {result.results.length > 1 && (
                   <div className="glass-card p-6">
                     <h3 className="mb-4 text-sm font-bold text-text-secondary">Model Comparison</h3>
@@ -270,7 +262,6 @@ export default function PredictPage() {
                   </div>
                 )}
 
-                {/* Actions after prediction */}
                 <div className="flex gap-2">
                   <button
                     type="button"
