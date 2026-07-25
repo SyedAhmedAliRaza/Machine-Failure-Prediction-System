@@ -102,6 +102,3 @@ python extract_model.py
 - **Database**: MongoDB, Mongoose ODM
 - **Machine Learning**: Scikit-Learn, Pandas, Numpy
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
